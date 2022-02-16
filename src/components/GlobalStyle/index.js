@@ -12,13 +12,19 @@ export class GlobalStyle extends React.Component {
                    box-sizing: border-box; 
                 }
 
+                html {
+                    font-size: 62.5%;
+                }
+
                 body {
-                    width: 100%;
                     min-height: 100vh;
                     background-color: ${pallet.neutral.black};
-                    font-size: 62.5%;
                     font-family: 'Overpass', sans-serif;
                     color: ${pallet.neutral.white};
+                }
+
+                ul {
+                    list-style:none
                 }
             `}
             </style>

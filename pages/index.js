@@ -1,13 +1,63 @@
-import React from 'react';
+import React from "react";
 import mainBg from "../src/img/main-bg.svg";
+import { Box, Text } from "@skynexui/components";
+import Header from "../src/components/Header";
+import pallet from "../src/colors/pallet.json"
+import DefaultButton from "../src/components/DefaultButton";
 
-export default class HomePage extends React.Component{
-    render(){
-        console.log(mainBg)
-        return(
-            <section style={{height: "100vh", backgroundImage: `url(${mainBg.src})`, backgroundRepeat: 'no-repeat' }}>
-                hello world
-            </section>
-        )
-    }
+export default class HomePage extends React.Component {
+  render() {
+    return (
+      <Box
+        as="section"
+        styleSheet={{
+          height: "100vh",
+          backgroundImage: `url(${mainBg.src})`,
+          backgroundRepeat: "no-repeat", backgroundPosition: "center",
+          padding: "6.2rem  2.5rem 0 12rem",
+        }}
+      >
+        <Header />
+
+        <Box
+          as="main"
+          styleSheet={{
+            height: "53.6rem",
+            paddingTop: "16.8rem",
+          }}
+        >
+          <Box 
+            as="article"
+            styleSheet={{
+                maxWidth: "55.9rem"
+            }}
+            >
+            <Text
+              as="h1"
+              styleSheet={{
+                  maxWidth: "50rem",
+                fontFamily: "font-family: 'Overpass', sans-serif;",
+                fontSize: "4.8rem",
+              }}
+            >
+            O maior banco de devs do Brasil  
+            </Text>
+
+            <Text 
+                as="p"
+                styleSheet={{
+                    fontSize: "2.4rem",
+                    color: pallet.neutral["dark-gray"],
+                    marginTop: "1.6rem"
+                }}
+            >
+                Nao importa se front ou back end,  fazer networking e muito importante. Faça parte da maior comunidade de desenvolvedores brasileiros.
+            </Text>
+          </Box>
+
+          <DefaultButton textContent="Entre Agora" width="24.1rem" color={pallet.primary.green} />
+        </Box>
+      </Box>
+    );
+  }
 }
