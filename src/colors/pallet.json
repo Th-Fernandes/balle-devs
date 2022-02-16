@@ -1,0 +1,14 @@
+{
+    "primary": {
+        "green": "#27AE60",
+        "red": "#F42626",
+        "yellow": "#DBB801"
+    },
+
+    "neutral": {
+        "black": "#1D1D1D",
+        "white": "#ffffff",
+        "light-gray": "#f9f9f9",
+        "dark-gray": "#A9A9A9"
+    }
+}
