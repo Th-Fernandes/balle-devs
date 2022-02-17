@@ -14,10 +14,11 @@ export default class HomePage extends React.Component {
           height: "100vh",
           backgroundImage: `url(${mainBg.src})`,
           backgroundRepeat: "no-repeat", backgroundPosition: "center",
-          padding: "6.2rem  2.5rem 0 12rem",
+          backgroundSize: "cover",
+          padding: "6.2rem  12rem 0 12rem",
         }}
       >
-        <Header />
+        <Header withSearch={false}/>
 
         <Box
           as="main"
@@ -43,7 +44,7 @@ export default class HomePage extends React.Component {
             O maior banco de devs do Brasil  
             </Text>
 
-            <Text 
+            <Text
                 as="p"
                 styleSheet={{
                     fontSize: "2.4rem",
@@ -51,11 +52,18 @@ export default class HomePage extends React.Component {
                     marginTop: "1.6rem"
                 }}
             >
-                Nao importa se front ou back end,  fazer networking e muito importante. Faça parte da maior comunidade de desenvolvedores brasileiros.
+                Nao importa se front ou back end,  fazer networking é muito importante. Faça parte da maior comunidade de desenvolvedores brasileiros.
             </Text>
           </Box>
 
-          <DefaultButton textContent="Entre Agora" width="24.1rem" color={pallet.primary.green} />
+          <DefaultButton
+            clickState={this.handleNextPage}
+            textContent="Entre Agora"
+            width="24.1rem"
+            height="5.8rem"
+            marginTop = "6.9rem"
+            color={pallet.primary.green}
+          />
         </Box>
       </Box>
     );
