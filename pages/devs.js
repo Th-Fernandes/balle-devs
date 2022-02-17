@@ -1,6 +1,7 @@
 import { Box } from '@skynexui/components';
 import React from 'react';
 import Header from "../src/components/Header"
+import ListaDevs from "../src/components/ListaDevs"
 
 export default function DevListPage(props) {
     return(
@@ -13,6 +14,9 @@ export default function DevListPage(props) {
         >
             <Header withSearch={true}/>
             {props.withSearch && <SearchContent />}
+
+            {/* main content */}
+            <ListaDevs />
         </Box>
     )
 }

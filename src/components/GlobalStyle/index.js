@@ -26,6 +26,10 @@ export class GlobalStyle extends React.Component {
                 ul {
                     list-style:none
                 }
+
+                li {
+                    list-style-type: none;
+                }
             `}
             </style>
         )
