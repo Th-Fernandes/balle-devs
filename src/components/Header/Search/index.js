@@ -3,6 +3,7 @@ import DefaultButton from "../../DefaultButton"
 import pallet from "../../../colors/pallet.json"
 
 export default function SearchContent(props) {
+  console.log(props.buttonsType)
     return (
         <Box
           styleSheet={{
@@ -25,6 +26,7 @@ export default function SearchContent(props) {
           <DefaultButton
             onClick={() => {
               props.addDev(true)
+              props.buttonsType('submit')
             }}
             width="20rem"
             height= "4rem"

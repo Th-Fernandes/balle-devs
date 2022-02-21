@@ -2,6 +2,7 @@ import { Box, Text} from "@skynexui/components";
 import DefaultButton from "../../DefaultButton";
 import FormItem from "../../formItem";
 import pallet from "../../../colors/pallet.json"
+import ButtonActions from "../../ButtonActions";
 
 export default function DevForm(props) {
   console.log(props)
@@ -35,25 +36,7 @@ export default function DevForm(props) {
           <FormItem  label="LinkedIn:"/>
       </Box>
       {/* action buttons */}  
-      <Box
-        styleSheet={{
-          maxWidth: '28.9rem',
-          margin: "5.8rem auto 0",
-          display: 'flex',
-          justifyContent: 'space-between'
-        }}
-      >
-        <DefaultButton 
-          width='12.5rem' 
-          height="4rem" 
-          color={pallet.neutral.white} 
-          textContent="cancelar"
-          onClick={() => {
-            props.cancelSubmit(false)
-          }} 
-        />
-        <DefaultButton width='12.5rem' height="4rem" color={pallet.primary.green} textContent="Adicionar" />
-      </Box>
+      <ButtonActions type={props.type} cancelSubmit={props.cancelSubmit} />
     </Box>
   );
 }

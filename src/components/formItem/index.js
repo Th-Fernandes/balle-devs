@@ -9,7 +9,7 @@ export default function FormItem(props) {
       }}
     >
       <label 
-        for="devNameInput" 
+        htmlFor="devNameInput" 
         style={{ 
             fontSize: "22px", 
             marginBottom: '1rem',

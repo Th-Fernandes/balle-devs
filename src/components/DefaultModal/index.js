@@ -1,5 +1,6 @@
 import { Box } from "@skynexui/components";
 import pallet from "../../colors/pallet.json";
+import DefaultDelete from "./DefaultDelete";
 import DefaultDevForm from "./DefaultDevForm"
 
 export default function DefaultModal(props) {
@@ -18,7 +19,12 @@ export default function DefaultModal(props) {
                 zIndex: 999
             }}
         >
-            <DefaultDevForm  title="Adicionar desenvolvedor" cancelSubmit={props.cancelSubmit}/>
+            {props.type == "form" && 
+            <DefaultDevForm  title="Adicionar desenvolvedor" cancelSubmit={props.cancelSubmit} type={props.buttonsType.changeModal}/>
+            }
+
+            {props.type == "cancel" && <DefaultDelete  />}
+            
 
         </Box>
     )

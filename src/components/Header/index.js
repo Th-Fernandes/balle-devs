@@ -16,7 +16,7 @@ export default function header(props) {
         justifyContent: "space-between",
       }}
     >
-      <Box as="ul" styleSheet={{}}>
+      <Box as="ul">
         <Box as="li">
           <img src={facebookLogo.src} />
           <img style={{ margin: "0 2rem" }} src={linkedinLogo.src} />
@@ -27,7 +27,7 @@ export default function header(props) {
       {/* logo */}
       <Image src={headerLogo.src} />
       {/* search content */}      
-      {props.withSearch && <SearchContent addDev={props.addDev} />}
+      {props.withSearch && <SearchContent addDev={props.addDev} buttonsType={props.buttonsType} />}
     </Box>
   );
 }

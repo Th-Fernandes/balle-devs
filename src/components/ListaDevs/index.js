@@ -3,7 +3,7 @@ import CardDevs from "./CardDevs"
 import returnIcon from "../../img/return-icon.svg"
 import advanceIcon from "../../img/advance-icon.svg"
 
-export default function CardList() {
+export default function CardList(props) { 
     return(
         <Box 
             as="ul"
@@ -18,8 +18,8 @@ export default function CardList() {
             <img src={returnIcon.src} />
             
             {
-                Array.of(1,2,3).map(() => {
-                    return <CardDevs />
+                Array.of(1,2,3).map((el, index) => {
+                    return <CardDevs key={index} buttonTypes={props.buttonsType} openModal={props.openModal} />
                 })
             }
 

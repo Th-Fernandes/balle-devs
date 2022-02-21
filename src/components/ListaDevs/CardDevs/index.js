@@ -5,7 +5,7 @@ import whiteGitHub from "../../../img/white-gitHub.svg";
 import whitelinkedin from "../../../img/white-linkedin.svg";
 import DefaultButton from "../../DefaultButton";
 
-export default function Cards() {
+export default function Cards(props) {
   return (
     <Box as="li">
       {/* inside card content */}
@@ -60,8 +60,23 @@ export default function Cards() {
             marginTop: '5.3rem'
         }}
       >
-          <DefaultButton width="12.5rem" height="4rem" textContent="Editar" color={pallet.primary.yellow} />
-          <DefaultButton width="12.5rem" height="4rem" textContent="Deletar" color={pallet.primary.red} />
+          <DefaultButton
+            onClick={() => {
+              props.buttonTypes('edit')
+              props.openModal(true)
+            }}
+            width="12.5rem"
+            height="4rem"
+            textContent="Editar"
+            color={pallet.primary.yellow}
+          />
+
+          <DefaultButton
+            width="12.5rem"
+            height="4rem"
+            textContent="Deletar"
+            color={pallet.primary.red} 
+          />
       </Box>
     </Box>
   );
