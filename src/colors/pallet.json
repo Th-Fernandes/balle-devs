@@ -10,6 +10,6 @@
         "white": "#ffffff",
         "light-gray": "#f9f9f9",
         "dark-gray": "#A9A9A9",
-        "pseudo-dark-gray": "rgba()"
+        "pseudo-dark-gray": "rgba(0, 0, 0, 0.7)"
     }
 }

@@ -2,70 +2,78 @@ import React from "react";
 import mainBg from "../src/img/main-bg.svg";
 import { Box, Text } from "@skynexui/components";
 import Header from "../src/components/Header";
-import pallet from "../src/colors/pallet.json"
+import pallet from "../src/colors/pallet.json";
 import DefaultButton from "../src/components/DefaultButton";
+import { useRouter } from "next/router";
 
-export default class HomePage extends React.Component {
-  render() {
-    return (
+export default function HomePage() {
+  const router = useRouter()
+
+  const handleRouter = () => {
+      router.push('./devs')
+  }
+
+  return (
+    <Box
+      as="section"
+      styleSheet={{
+        height: "100vh",
+        backgroundImage: `url(${mainBg.src})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        padding: "6.2rem  12rem 0 12rem",
+      }}
+    >
+      <Header withSearch={false} />
+
       <Box
-        as="section"
+        as="main"
         styleSheet={{
-          height: "100vh",
-          backgroundImage: `url(${mainBg.src})`,
-          backgroundRepeat: "no-repeat", backgroundPosition: "center",
-          backgroundSize: "cover",
-          padding: "6.2rem  12rem 0 12rem",
+          height: "53.6rem",
+          paddingTop: "16.8rem",
         }}
       >
-        <Header withSearch={false}/>
-
         <Box
-          as="main"
+          as="article"
           styleSheet={{
-            height: "53.6rem",
-            paddingTop: "16.8rem",
+            maxWidth: "55.9rem",
           }}
         >
-          <Box 
-            as="article"
+          <Text
+            as="h1"
             styleSheet={{
-                maxWidth: "55.9rem"
+              maxWidth: "50rem",
+              fontFamily: "font-family: 'Overpass', sans-serif;",
+              fontSize: "4.8rem",
             }}
-            >
-            <Text
-              as="h1"
-              styleSheet={{
-                  maxWidth: "50rem",
-                fontFamily: "font-family: 'Overpass', sans-serif;",
-                fontSize: "4.8rem",
-              }}
-            >
-            O maior banco de devs do Brasil  
-            </Text>
+          >
+            O maior banco de devs do Brasil
+          </Text>
 
-            <Text
-                as="p"
-                styleSheet={{
-                    fontSize: "2.4rem",
-                    color: pallet.neutral["dark-gray"],
-                    marginTop: "1.6rem"
-                }}
-            >
-                Nao importa se front ou back end,  fazer networking é muito importante. Faça parte da maior comunidade de desenvolvedores brasileiros.
-            </Text>
-          </Box>
-
-          <DefaultButton
-            clickState={this.handleNextPage}
-            textContent="Entre Agora"
-            width="24.1rem"
-            height="5.8rem"
-            marginTop = "6.9rem"
-            color={pallet.primary.green}
-          />
+          <Text
+            as="p"
+            styleSheet={{
+              fontSize: "2.4rem",
+              color: pallet.neutral["dark-gray"],
+              marginTop: "1.6rem",
+            }}
+          >
+            Nao importa se front ou back end, fazer networking é muito
+            importante. Faça parte da maior comunidade de desenvolvedores
+            brasileiros.
+          </Text>
         </Box>
+
+        <DefaultButton
+          onClick={handleRouter}
+          textContent="Entre Agora"
+          width="24.1rem"
+          height="5.8rem"
+          marginTop="6.9rem"
+          color={pallet.primary.green}
+        />
       </Box>
-    );
-  }
+    </Box>
+  );
 }

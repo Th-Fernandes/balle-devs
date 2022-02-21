@@ -1,17 +1,10 @@
 import React from "react";
 import { Button } from "@skynexui/components";
-import { useRouter } from "next/router";
 
-export default function defaultButton(props) {
-    const router = useRouter()
-
-    const handleRouter = () => {
-        router.push('./devs')
-    }
-  
+export default function defaultButton(props) {  
     return (
         <Button
-            onClick={handleRouter}
+            onClick={props.onClick}
             label={props.textContent}
             styleSheet={{
                 width: props.width,

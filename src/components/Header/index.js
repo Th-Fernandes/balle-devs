@@ -27,7 +27,7 @@ export default function header(props) {
       {/* logo */}
       <Image src={headerLogo.src} />
       {/* search content */}      
-      {props.withSearch && <SearchContent />}
+      {props.withSearch && <SearchContent addDev={props.addDev} />}
     </Box>
   );
 }
