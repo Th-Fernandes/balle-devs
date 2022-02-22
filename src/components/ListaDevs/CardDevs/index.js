@@ -1,11 +1,15 @@
 import { Box, Button, Image, Text } from "@skynexui/components";
 import pallet from "../../../colors/pallet.json";
-import devPhoto from "../../../img/dev-example.svg";
 import whiteGitHub from "../../../img/white-gitHub.svg";
 import whitelinkedin from "../../../img/white-linkedin.svg";
 import DefaultButton from "../../DefaultButton";
 
 export default function Cards(props) {
+  const handleUserData = () => {
+    return props.userData[props.index]
+  }
+  console.log(handleUserData())
+
   return (
     <Box as="li">
       {/* inside card content */}
@@ -18,23 +22,25 @@ export default function Cards(props) {
         }}
       >
         {/* programmer photo */}
-        <Image src={devPhoto.src} styleSheet={{ margin: "auto" }} />
+        <Image src={handleUserData().avatar} styleSheet={{ margin: "auto", borderRadius: "50%" }} />
         {/* programer description */}
         <Box
           as="article"
           styleSheet={{ textAlign: "center", marginBottom: "2.7rem" }}
         >
           <h2 style={{ fontSize: "2.5rem", marginTop: "1rem" }}>
-            Rafaella Ballerini
+            {handleUserData().nome}
           </h2>
-          <Text>instrutora front-end</Text>
+          <Text> {handleUserData().cargo} </Text>
         </Box>
         {/* programmer social medias */}
         <Box styleSheet={{ display: "flex" }}>
           {/* social medias group */}
           <Box as="ul" styleSheet={{ display: "flex", alignItems: "center" }}>
             <li>
-              <Image src={whiteGitHub.src} />{" "}
+              <a href={handleUserData().github}>
+                <Image src={whiteGitHub.src} />
+              </a>
             </li>
             <li>
               <Image

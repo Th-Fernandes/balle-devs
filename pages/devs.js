@@ -11,7 +11,7 @@ export default function DevListPage(props) {
 
   return (
     <>
-      {newDev && <DefaultModal  cancelSubmit={setNewDev} buttonsType={{setChangeModal, changeModal}}/>}
+      {newDev && <DefaultModal type="form"  cancelSubmit={setNewDev} buttonsType={{setChangeModal, changeModal}}/>}
 
       <Box
         as="section"
