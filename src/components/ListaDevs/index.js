@@ -8,12 +8,21 @@ import React from 'react'
 export default function CardList(props) { 
     const [devs, setDevs] = React.useState([])
 
+    const handleDeleteCard = (index) => {
+        supabase
+             .from('devs')
+             .delete()
+             .match({id: index})
+             .then()
+    }
+
     React.useEffect(() => {
         supabase
              .from('devs')
              .select()
              .then((response) => {
                 setDevs(response.data)
+                console.log(devs)
              })
              .finally(console.log('dados de devs coletados com sucesso')) 
               
@@ -36,11 +45,15 @@ export default function CardList(props) {
                 devs.map((el, index) => {
                     return (
                     <CardDevs
+                      selectedCard={props.selectedCard}
+                      deleteClick={props.deleteClick}
                       userData={devs}
+                      deleteCard={handleDeleteCard}
                       index={index}
                       key={index}
                       buttonTypes={props.buttonsType}
                       openModal={props.openModal} 
+                      setModalType={props.setModalType}
                     />)
                 })
             }

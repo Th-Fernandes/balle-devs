@@ -7,6 +7,7 @@ import headerLogo from "../../img/Logo.svg";
 import SearchContent from "./Search";
 
 export default function header(props) {
+  console.log(props)
   return (
     <Box
       as="header"
@@ -27,7 +28,11 @@ export default function header(props) {
       {/* logo */}
       <Image src={headerLogo.src} />
       {/* search content */}      
-      {props.withSearch && <SearchContent addDev={props.addDev} buttonsType={props.buttonsType} />}
+      {props.withSearch && <SearchContent
+        addDev={props.addDev}
+        buttonsType={props.buttonsType}
+        setModalType={props.setModalType} 
+        />}
     </Box>
   );
 }

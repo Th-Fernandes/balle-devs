@@ -3,15 +3,22 @@ import pallet from "../../../colors/pallet.json";
 import whiteGitHub from "../../../img/white-gitHub.svg";
 import whitelinkedin from "../../../img/white-linkedin.svg";
 import DefaultButton from "../../DefaultButton";
+import DefaultPhoto from "../../../img/dev-example.svg"
 
 export default function Cards(props) {
   const handleUserData = () => {
     return props.userData[props.index]
   }
+
   console.log(handleUserData())
 
   return (
-    <Box as="li">
+    <Box 
+      as="li"
+      onClick={()=> {
+        props.selectedCard(props.userData[props.index])
+      }}
+      >
       {/* inside card content */}
       <Box
         styleSheet={{
@@ -22,7 +29,7 @@ export default function Cards(props) {
         }}
       >
         {/* programmer photo */}
-        <Image src={handleUserData().avatar} styleSheet={{ margin: "auto", borderRadius: "50%" }} />
+        <Image src={handleUserData().avatar } styleSheet={{ margin: "auto", borderRadius: "50%",  }} />
         {/* programer description */}
         <Box
           as="article"
@@ -78,6 +85,13 @@ export default function Cards(props) {
           />
 
           <DefaultButton
+            onClick={() => {
+              props.openModal(true)
+              props.setModalType('delete')
+              props.deleteCard(handleUserData().id)
+
+              
+            }}
             width="12.5rem"
             height="4rem"
             textContent="Deletar"

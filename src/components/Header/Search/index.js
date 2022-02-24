@@ -27,6 +27,7 @@ export default function SearchContent(props) {
             onClick={() => {
               props.addDev(true)
               props.buttonsType('submit')
+              props.setModalType('form')
             }}
             width="20rem"
             height= "4rem"

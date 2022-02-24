@@ -1,4 +1,5 @@
 import { Box } from "@skynexui/components";
+import React from "react";
 
 export default function FormItem(props) {
   return (
@@ -18,7 +19,12 @@ export default function FormItem(props) {
             >
         {props.label}
       </label>
+
       <input 
+        onChange={(el) => {
+          props.inputValue(el.target.value)
+          console.log(props.inputValue)
+        }}
         id="devNameInput" 
         style={{ 
           display: "block", 
